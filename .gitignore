@@ -1,0 +1,7 @@
+# Ignore MaxOs DSStore file
+*.DS_Store
+.DS_Store
+
+# Ignore all node module file
+node_modiles
+node_modules/*

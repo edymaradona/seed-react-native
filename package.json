@@ -1,0 +1,17 @@
+{
+  "name": "seed-react-native",
+  "version": "1.0.0",
+  "description": "A generator for ready-to-implement react-native project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "seed-react-native": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
+}
