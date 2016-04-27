@@ -13,6 +13,7 @@ var CLI_MODULE_PATH = function() {
     process.cwd(),
     'node_modules',
     'seed-react-native',
+    'local-cli',
     'cli.js'
   );
 };
@@ -85,22 +86,33 @@ function init(name, verbose) {
 
   // install react-native
   console.log(chalk.green('Initiating a new project'));
-  exec('react-native init '+name, function(e, stdout, stderr) {
-    if (e) {
-      console.log(stdout);
-      console.error(stderr);
-      process.exit(1);
-    }
-    console.log(chalk.green('Project was created at '+ root));
-  });
+  // exec('react-native init '+name, function(e, stdout, stderr) {
+  //   if (e) {
+  //     console.log(stdout);
+  //     console.error(stderr);
+  //     process.exit(1);
+  //   }
+  //   console.log(chalk.green('Installing required npm module...'));
+  //   process.chdir(root);
+  //   // install cli file
+  //   exec('npm install --save seed-react-native', function(e, stdout, stderr) {
+  //     if (e) {
+  //       console.log(stdout);
+  //       console.error(stderr);
+  //       process.exit(1);
+  //     }
+  //
+  //     var cli = require(CLI_MODULE_PATH());
+  //     cli.init(root, projectName);
+  //
+  //     console.log(chalk.green('Project was created at '+ root));
+  //   });
+  // });
+  process.chdir(root);
+  var cli = require(CLI_MODULE_PATH());
+  cli.init(root, projectName);
 
-  // install cli file
-  exec('npm install seed-react-native', function(e, stdout, stderr) {
-    if (e) {
-      console.log(stdout);
-      console.error(stderr);
-      process.exit(1);
-    }
-    console.log(chalk.green('Project was created at '+ root));
-  });
+  console.log(chalk.green('Project was created at '+ root));
+
+
 }
