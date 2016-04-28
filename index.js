@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 'use strict';
 
 var fs = require('fs');
@@ -86,33 +85,27 @@ function init(name, verbose) {
 
   // install react-native
   console.log(chalk.green('Initiating a new project'));
-  // exec('react-native init '+name, function(e, stdout, stderr) {
-  //   if (e) {
-  //     console.log(stdout);
-  //     console.error(stderr);
-  //     process.exit(1);
-  //   }
-  //   console.log(chalk.green('Installing required npm module...'));
-  //   process.chdir(root);
-  //   // install cli file
-  //   exec('npm install --save seed-react-native', function(e, stdout, stderr) {
-  //     if (e) {
-  //       console.log(stdout);
-  //       console.error(stderr);
-  //       process.exit(1);
-  //     }
-  //
-  //     var cli = require(CLI_MODULE_PATH());
-  //     cli.init(root, projectName);
-  //
-  //     console.log(chalk.green('Project was created at '+ root));
-  //   });
-  // });
-  process.chdir(root);
-  var cli = require(CLI_MODULE_PATH());
-  cli.init(root, projectName);
+  console.log('- Installing react-native');
+  exec('react-native init '+name, function(e, stdout, stderr) {
+    if (e) {
+      console.log(stdout);
+      console.error(stderr);
+      process.exit(1);
+    }
 
-  console.log(chalk.green('Project was created at '+ root));
-
-
+    console.log('- Installing seed-react-native cli');
+    process.chdir(root);
+    // install cli file
+    exec('npm install --save seed-react-native', function(e, stdout, stderr) {
+      if (e) {
+        console.log(stdout);
+        console.error(stderr);
+        process.exit(1);
+      }
+      
+      console.log(chalk.green('Creating project structure'));
+      var cli = require(CLI_MODULE_PATH());
+      cli.init(root, projectName);
+    });
+  });
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const {AppRegistry} = require('react-native');
-const setup = require('./app/setup');
+import {AppRegistry} from 'react-native';
+import setup from './app/setup';
 
-AppRegistry.registerComponent(<%= name %>, setup);
+AppRegistry.registerComponent('<%= projectName %>', setup);
