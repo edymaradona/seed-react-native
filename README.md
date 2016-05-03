@@ -1,5 +1,5 @@
 # seed-react-native
-A generator for ready-to-implement react-native project. After initiate a new project following depedencies will also download and automatically config.
+A generator for ready-to-implement react-native project. After initiate a new project all required depedencies will also download and automatically config.
 - Redux
 
 ##Getting Started
