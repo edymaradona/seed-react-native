@@ -21,8 +21,9 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    this.conflicter.force = this.options.force;
-    
+    this.conflicter.force = true;
+    //TODO: remove ios and android tmp before coppying a new file
+
     // revised react-native file
     this.copy('index.android.js', 'index.android.js');
     this.copy('index.ios.js', 'index.ios.js');
@@ -41,11 +42,11 @@ module.exports = yeoman.Base.extend({
     this.npmInstall(['redux'], {'--save': true});
     this.npmInstall(['react-redux'], {'--save': true});
     this.npmInstall(['redux-thunk'], {'--save': true});
-    this.npmInstall(['redux-logger'], {'save': true});
-    this.npmInstall(['redux-persist'], {'save': true});
+    this.npmInstall(['redux-logger'], {'--save': true});
+    this.npmInstall(['redux-persist'], {'--save': true});
   },
   end: function() {
-    this.log(chalk.green.bold('Project successfully created'));
+    this.log(chalk.green('Project successfully created'));
 
     var projectPath = this.destinationRoot();
     this.log(chalk.white.bold('To run your app on iOS:'));

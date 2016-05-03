@@ -6,6 +6,7 @@ var path = require('path');
 var exec = require('child_process').exec;
 var spawn = require('child_process').spawn;
 var chalk = require('chalk');
+var Spinner = require('cli-spinner').Spinner;
 
 var CLI_MODULE_PATH = function() {
   return path.resolve(
@@ -78,22 +79,23 @@ function validatePackageName(name) {
 
 function init(name, verbose) {
   validatePackageName(name);
-
-  // TO-DO: verify if ther is not existing project with the same name in the same location
   var root = path.resolve(name);
   var projectName = path.basename(root);
 
   // install react-native
   console.log(chalk.green('Initiating a new project'));
-  console.log('- Installing react-native');
-  exec('react-native init '+name, function(e, stdout, stderr) {
+  var spinner = new Spinner('Installing React Native...');
+  spinner.setSpinnerString('-|/-|\\');
+  spinner.start();
+
+  exec('react-native init '+name, function(e, stdout, stderr){
     if (e) {
       console.log(stdout);
       console.error(stderr);
       process.exit(1);
     }
+    spinner.stop();
 
-    console.log('- Installing seed-react-native cli');
     process.chdir(root);
     // install cli file
     exec('npm install --save seed-react-native', function(e, stdout, stderr) {
@@ -102,10 +104,13 @@ function init(name, verbose) {
         console.error(stderr);
         process.exit(1);
       }
-      
-      console.log(chalk.green('Creating project structure'));
+
+      console.log(chalk.green('/n Creating project structure'));
       var cli = require(CLI_MODULE_PATH());
       cli.init(root, projectName);
+
     });
+
   });
+
 }

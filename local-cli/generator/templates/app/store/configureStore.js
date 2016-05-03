@@ -16,7 +16,9 @@ var logger = createLogger({
 var createAppStore = applyMiddleware(thunk, logger)(createStore);
 
 export default function configureStore(onComplete) {
+
   //TODO(frantic): reconsider usage of redux-persist, maybe add cache breaker
+  
   const store = autoRehydrate()(createAppStore)(reducers);
   persistStore(store, {storage: AsyncStorage}, onComplete);
   if (isDebuggingInChrome) {

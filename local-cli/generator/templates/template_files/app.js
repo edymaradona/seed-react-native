@@ -2,6 +2,7 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  Image,
   View,
 } from 'react-native';
 
@@ -15,25 +16,30 @@ export default class Hello extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        <Image
+          source={require('./images/logo.png')}
+          style={styles.logo}
+        />
+        <Text style={styles.text}>
           Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
         </Text>
       </View>
     );
   }
 }
 
-
-var styles = StyleSheet.create({
+styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#153a44",
   },
+  logo:{
+    marginBottom: 20
+  },
+  text: {
+    color: "#fff"
+	}
 });
