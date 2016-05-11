@@ -49,7 +49,7 @@ if (cli) {
     break;
   default:
     console.error(
-      'Command `%s` unrecognized. ' +
+      'Command `%s` unrecognized. ',
       args[0]
     );
     process.exit(1);
@@ -84,6 +84,7 @@ function init(name, verbose) {
 
   // install react-native
   console.log(chalk.green('Initiating a new project'));
+  console.log(chalk.green('Grab yourself some popcorn this might take a while....🍿🍿🍿🍿'));
   var spinner = new Spinner('Installing React Native...');
   spinner.setSpinnerString('-|/-|\\');
   spinner.start();
