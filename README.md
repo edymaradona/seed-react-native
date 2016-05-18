@@ -63,8 +63,8 @@ To start an application, CD into the project folder and run
 
     $ react-native run-ios
     
-    to run iOS application
+for iOS application
     
     $ react-native run-android
     
-	to run Android application
+for Android application
