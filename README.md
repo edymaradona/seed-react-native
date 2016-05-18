@@ -38,23 +38,33 @@ A generator for ready-to-implement react-native project. After initiate a new pr
 	$ curl -L https://npmjs.org/install.sh | sh
 	```
 
-- React Native
+- React Native Command Line Tools - This is a crucial Node.js module that make seed-react-native working,
 
+	```bash
+	$ npm install -g react-native-cli
+	```
+	If you have some error related to permission, please run
+	
+	```bash
+	sudo npm install -g react-native-cli
+	```
 
 ## Getting Started Instructions
 
-To create a new seed-react-project, first, install seed-react-native globally in order to initiate a new project anywhere in the system (you may need to use Admin account to do this)
-
-    $ npm install -g seed-react-native
-
-After that, CD into your target folder and run init command
+To create a new seed-react-project, CD into your target folder and run init command
 
     $ seed-react-native init <Project Name>
 
-seed-react-native will first initiate a new react-native project based on your given name and then scafold your project. This process may take a bit of time.
+seed-react-native will first initiate a new react native project based on your given name and then scafold your project. This process may take a bit of time.
 
 After all done, the project folder will be created based on the given project name.
 
-To start an App, CD into the project folder and run
+To start an application, CD into the project folder and run
 
-    $ 
+    $ react-native run-ios
+    
+    to run iOS application
+    
+    $ react-native run-android
+    
+	to run Android application
