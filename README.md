@@ -29,16 +29,17 @@ A generator for ready-to-implement react-native project. After initiate a new pr
 - NPM - NPM may or may not have been installed with Node. Try:
 
     ```bash
-		$ npm
-		```
+	$ npm
+	```
 		
     If you get a "not found" error, run this:
 		
-		```bash
-		$ curl -L https://npmjs.org/install.sh | sh
-		```
+	```bash
+	$ curl -L https://npmjs.org/install.sh | sh
+	```
 
 - React Native
+
 
 ## Getting Started Instructions
 
