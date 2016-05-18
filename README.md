@@ -10,23 +10,33 @@ A generator for ready-to-implement react-native project. After initiate a new pr
 
     This project depends on Node versions greater than v4, use nvm to install and setup open up the command line and run
     
+    ```bash
     $ nvm install 4.x.x
-
+    ```
+    
     Next simply switch to node v4:
     
+    ```bash
     $ nvm use 4.x.x
-
-    This will change your current terminal session to use 4.0.0. If you want to use it permanently run:
-
-    $ nvm alias default 4.x.x
+    ```
     
+    This will change your current terminal session to use 4.0.0. If you want to use it permanently run:
+    
+    ```bash
+    $ nvm alias default 4.x.x
+    ```
+  
 - NPM - NPM may or may not have been installed with Node. Try:
 
-    $ npm
-
+    ```bash
+		$ npm
+		```
+		
     If you get a "not found" error, run this:
-	
-	$ curl -L https://npmjs.org/install.sh | sh
+		
+		```bash
+		$ curl -L https://npmjs.org/install.sh | sh
+		```
 
 - React Native
 
