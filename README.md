@@ -68,3 +68,14 @@ for iOS application
     $ react-native run-android
     
 for Android application
+
+## Project Strucuture
+Below is the applcation structure:
+
+	- local-cli/ ---| <!-- Contains files for building project structure -->
+			- generator/ <!-- Contains all project template file -->
+			- cli.js <!-- Main code for scafolding a new project by useing [Yeoman](http://yeoman.io/) -->
+	- index.js <!-- Main Node.js script for recieving command from CLI -->
+	- package.json
+	- processes.json
+	- README.md
